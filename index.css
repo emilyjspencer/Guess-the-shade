@@ -1,0 +1,11 @@
+#container {
+    background-color: pink;
+    display: inline-block;
+}
+
+.square {
+    background-color: rgb(112, 109, 109);
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
