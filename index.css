@@ -1,21 +1,22 @@
 #container {
-    background-color: pink;
-    height: 310px;
+    background-color: #acd1f0;
+    height: 410px;
     width: 400px;
     text-align: center;
     margin: auto;
+    max-width: 600px;
    
 }
 
 .square {
     background-color: rgb(112, 109, 109);
     width: 30%;
-    height: 30%;
     border-radius: 5%;
     margin: 1.66%;
     float: left;
+    padding-bottom: 30%;
 }
 
 body {
-    background-color: #232323;
+    background-color: #acd1f0;
 }
