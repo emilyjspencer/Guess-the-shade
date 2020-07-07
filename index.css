@@ -1,11 +1,21 @@
 #container {
     background-color: pink;
-    display: inline-block;
+    height: 310px;
+    width: 400px;
+    text-align: center;
+    margin: auto;
+   
 }
 
 .square {
     background-color: rgb(112, 109, 109);
-    width: 100px;
-    height: 100px;
-    display: inline-block;
+    width: 30%;
+    height: 30%;
+    border-radius: 5%;
+    margin: 1.66%;
+    float: left;
+}
+
+body {
+    background-color: #232323;
 }
