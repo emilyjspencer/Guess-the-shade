@@ -1,11 +1,12 @@
 
-let numberOfSquares = 6;
+let numberOfSquares = 9;
 let squares = document.querySelectorAll(".square");
 const colourdisplay = document.getElementById("colourdisplay")
 const display = document.getElementById("winlose");
 const h1 = document.querySelector("h1");
 const resetGame = document.getElementById("resetGame");
 let easyMode = document.getElementById("easyMode");
+let mediumMode = document.getElementById("mediumMode");
 let hardMode = document.getElementById("hardMode");
 
 
@@ -41,6 +42,7 @@ resetGame.addEventListener("click", function() {
     colours = makeColours(numberOfSquares);
     selectedColourComputer = computerSelectsAColour();
     colourdisplay.textContent = selectedColourComputer;
+    display.textContent = '';
   
     for(let i = 0; i < squares.length; i++) {
         squares[i].style.backgroundColour = colours[i];
@@ -61,9 +63,10 @@ for(let i = 0; i < squares.length; i++) {
 		if(selectedColourComputer === selectedColourPlayer) {
 
             display.textContent = "Congrats! You won"
-            resetGame.textContent = "Play again?";
+            resetGame.textContent = "Play again? - click easy or hard";
             changeColoursOnWin(selectedColourPlayer);
             h1.style.backgroundColor = selectedColourPlayer;
+            display.textContent = '';
 		} else {
             this.style.backgroundColor = "#acd1f0";
             display.textContent = "Try again";
@@ -93,10 +96,28 @@ easyMode.addEventListener("click", () => {
     }
 });
 
+mediumMode.addEventListener("click", () => {
+    hardMode.classList.remove("mode");
+    easyMode.classList.remove("mode");
+    mediumMode.classList.add("mode");
+    numberOfSquares = 6
+    colours = makeColours(numberOfSquares)
+    selectedColourComputer = computerSelectsAColour();
+    colourdisplay.textContent = selectedColourComputer;
+    for(let i = 0; i < squares.length; i++) {
+        if(colours[i]){
+            squares[i].style.backgroundColor = colours[i];
+        } else {
+            squares[i].style.display = "none";
+            
+        }
+    }
+});
+
 hardMode.addEventListener("click", () => {
     hardMode.classList.add("mode");
     easyMode.classList.remove("mode");
-    numberOfSquares = 6
+    numberOfSquares = 9
     colours = makeColours(numberOfSquares);
     selectedColourComputer = computerSelectsAColour();
     colourdisplay.textContent = selectedColourComputer;
