@@ -80,11 +80,22 @@ for(let i = 0; i < squares.length; i++) {
 easyMode.addEventListener("click", () => {
     hardMode.classList.remove("mode");
     easyMode.classList.add("mode");
+    colours = makeColours(3)
+    selectedColourComputer = computerSelectsAColour();
+    colourdisplay.textContent = selectedColourComputer;
+    for(let i = 0; i < squares.length; i++) {
+        if(colours[i]){
+            squares[i].style.backgroundColor = colours[i];
+        }
+    }
 });
 
 hardMode.addEventListener("click", () => {
     hardMode.classList.add("mode");
     easyMode.classList.remove("mode");
+    colours = makeColours(6);
+    selectedColourComputer = computerSelectsAColour();
+    colourdisplay.textContent = selectedColourComputer;
     
 });
 
