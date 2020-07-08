@@ -20,3 +20,9 @@
 body {
     background-color: #acd1f0;
 }
+
+#winlose {
+    background-color: black;
+    color: white;
+    text-align: center;
+}

@@ -4,6 +4,8 @@ const squares = document.querySelectorAll(".square");
 const selectedColourComputer = colours[2];
 
 const colour = document.getElementById("colour")
+const display = document.getElementById("winlose");
+
 colour.textContent = selectedColourComputer;
 
 for(let i = 0; i < squares.length; i++) {
@@ -15,13 +17,14 @@ for(let i = 0; i < squares.length; i++) {
         let selectedColourPlayer = this.style.backgroundColor;
 		
 		if(selectedColourComputer === selectedColourPlayer) {
-            alert("You picked the right colour!");
             console.log(selectedColourComputer);
             console.log(selectedColourPlayer);
+            display.textContent = "Congrats! You won"
 		} else {
-            alert("your clicked the wrong colour!");
             console.log(selectedColourComputer);
             console.log(selectedColourPlayer);
+            this.style.backgroundColor = "#acd1f0";
+            display.textContent = "Try again";
 		}
     });
 }
