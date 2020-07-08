@@ -1,4 +1,9 @@
-const colours = ["rgb(200, 200, 4)", "rgb(100, 234, 32)", "rgb(32, 210, 39)", "rgb(255, 80, 146)", "rgb(120, 56, 2)", "rgb(210, 30, 4)", "rgb(2, 229, 250)", "rgb(150, 21, 89)"]
+
+
+const squares = document.querySelectorAll(".square");
+const colour = document.getElementById("colour")
+const display = document.getElementById("winlose");
+const h1 = document.querySelector("h1");
 
 
 const computerSelectsAColour = () => {
@@ -6,14 +11,28 @@ const computerSelectsAColour = () => {
     return colours[random];
 }
 
+const createRandomColour = () => {
+    const red = Math.floor(Math.random() * 256);
+    const green = Math.floor(Math.random() * 256);
+    const blue = Math.floor(Math.random() * 256);
+    return "rgb(" + red + "," + green + "," + blue + ")";
+}
 
-const squares = document.querySelectorAll(".square");
+const makeColours = (num) => {
+    const array = [];
+    for(let i = 0; i < num; i++) {
+        array.push(createRandomColour());
+        console.log(array)
+
+    }
+
+    return array;
+}
+const colours = makeColours(6);
+
 const selectedColourComputer = computerSelectsAColour();
-
-const colour = document.getElementById("colour")
-const display = document.getElementById("winlose");
-
 colour.textContent = selectedColourComputer;
+
 
 for(let i = 0; i < squares.length; i++) {
     squares[i].style.backgroundColor = colours[i] 
@@ -22,7 +41,8 @@ for(let i = 0; i < squares.length; i++) {
         
         console.log(this.style.backgroundColor);
         let selectedColourPlayer = this.style.backgroundColor;
-		
+        
+        console.log(selectedColourPlayer, selectedColourComputer);
 		if(selectedColourComputer === selectedColourPlayer) {
             console.log(selectedColourComputer);
             console.log(selectedColourPlayer);
@@ -37,10 +57,20 @@ for(let i = 0; i < squares.length; i++) {
     });
 }
 
-
 const changeColoursOnWin = (colour) => {
     for(let i = 0; squares.length; i++) {
         squares[i].style.backgroundColor = colour;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
 
