@@ -1,5 +1,9 @@
 # Guess the shade
 
+### Temporarily deployed with Surge at:
+[this link](http://profuse-swing.surge.sh/)!
+
+
 Guess the correct colour based on its rgb value.
 Easy mode: choose from a selection of three colours
 Medium mode: choose from a selection of six colours
@@ -27,6 +31,6 @@ cd Guess-the-shade
 ![medium](medium.png)
 ![hard](hard.png)
 
-# Temporarily deployed with Surge at:
-profuse-swing.surge.sh
+### Temporarily deployed with Surge at:
+[this link](http://profuse-swing.surge.sh/)!
 
