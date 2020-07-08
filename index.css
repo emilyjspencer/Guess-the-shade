@@ -43,3 +43,7 @@ button {
     border-radius: 9px;
     border: solid, black, 10px;
 }
+
+.mode {
+    background: blue;
+}
