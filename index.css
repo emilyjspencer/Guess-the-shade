@@ -1,11 +1,14 @@
+
+
 #container {
-    background-color: #acd1f0;
+    background-color: #aeb1b3;
     height: 410px;
     width: 400px;
     text-align: center;
     margin: auto;
     max-width: 600px;
-   
+    position: relative;
+    top: 50px;  
 }
 
 .square {
@@ -15,10 +18,15 @@
     margin: 1.66%;
     float: left;
     padding-bottom: 30%;
+    transition: background 0.6s;
+	-webkit-transition: background 0.6s;
+	-moz-transition: background 0.6s;
 }
 
 body {
-    background-color: #acd1f0;
+    background-color: #aeb1b3;
+    margin: 0;
+    font-family: "Fondamento";
 }
 
 #winlose {
@@ -29,21 +37,38 @@ body {
 
 #buttonscontainer {
     text-align: center;
-    background: white;
+    background: rgb(176, 229, 238);
     width: 100%;
-    height: 20px;
+    height: 40px;
 }
 
 h1 {
     text-align: center;
+    colour: rgb(108, 240, 233);
+    background: rgb(237, 243, 243);
+    height: 180px;
+    font-size: 45px;
+    margin: 0;
 }
 
 button {
-    background: white;
+    background: none;
     border-radius: 9px;
-    border: solid, black, 10px;
+    border: none;
+    font-family: Fondamento;
+    letter-spacing: 1px;
+    font-size: 17px;
+    transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+
 }
 
 .mode {
-    background: blue;
+    background: rgb(175, 178, 179);
+}
+
+#colourdisplay {
+    font-size: 65px;
+
 }

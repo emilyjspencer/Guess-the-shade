@@ -1,5 +1,5 @@
 
-
+let numberOfSquares = 6;
 let squares = document.querySelectorAll(".square");
 const colourdisplay = document.getElementById("colourdisplay")
 const display = document.getElementById("winlose");
@@ -31,14 +31,14 @@ computerSelectsAColour = () => {
 }
 
 
-let colours = makeColours(6);
+let colours = makeColours(numberOfSquares);
 
 let selectedColourComputer = computerSelectsAColour();
 colourdisplay.textContent = selectedColourComputer;
 
 resetGame.addEventListener("click", function() {
 
-    colours = makeColours(6);
+    colours = makeColours(numberOfSquares);
     selectedColourComputer = computerSelectsAColour();
     colourdisplay.textContent = selectedColourComputer;
   
@@ -80,7 +80,8 @@ for(let i = 0; i < squares.length; i++) {
 easyMode.addEventListener("click", () => {
     hardMode.classList.remove("mode");
     easyMode.classList.add("mode");
-    colours = makeColours(3)
+    numberOfSquares = 3
+    colours = makeColours(numberOfSquares)
     selectedColourComputer = computerSelectsAColour();
     colourdisplay.textContent = selectedColourComputer;
     for(let i = 0; i < squares.length; i++) {
@@ -95,7 +96,8 @@ easyMode.addEventListener("click", () => {
 hardMode.addEventListener("click", () => {
     hardMode.classList.add("mode");
     easyMode.classList.remove("mode");
-    colours = makeColours(6);
+    numberOfSquares = 6
+    colours = makeColours(numberOfSquares);
     selectedColourComputer = computerSelectsAColour();
     colourdisplay.textContent = selectedColourComputer;
     for(let i = 0; i < squares.length; i++) {
