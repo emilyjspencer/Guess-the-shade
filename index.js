@@ -86,6 +86,8 @@ easyMode.addEventListener("click", () => {
     for(let i = 0; i < squares.length; i++) {
         if(colours[i]){
             squares[i].style.backgroundColor = colours[i];
+        } else {
+            squares[i].style.display = "none";
         }
     }
 });
@@ -96,7 +98,10 @@ hardMode.addEventListener("click", () => {
     colours = makeColours(6);
     selectedColourComputer = computerSelectsAColour();
     colourdisplay.textContent = selectedColourComputer;
-    
+    for(let i = 0; i < squares.length; i++) {
+        squares[i].style.backgroundColor = colours[i];
+        squares[i].style.display = "block";
+    }  
 });
 
 
