@@ -4,21 +4,35 @@ const squares = document.querySelectorAll(".square");
 const colour = document.getElementById("colour")
 const display = document.getElementById("winlose");
 const h1 = document.querySelector("h1");
+const resetGame = document.getElementById("resetGame");
 
+resetGame.addEventListener("click", () => {
+    
+    colours = makeColours(6);
+    
+    selectedColourComputer = computerSelectsAColour(); 
+    
+    colour.textContent = selectedColourComputer;
+    
+    for(let i = 0; i < squares.length; i++) {
+        squares[i].style.backgroundColour = colours[i];
+    }
+    console.log("clicked")
+});
 
-const computerSelectsAColour = () => {
+computerSelectsAColour = () => {
     const random = Math.floor(Math.random() * colours.length)
     return colours[random];
 }
 
-const createRandomColour = () => {
+ createRandomColour = () => {
     const red = Math.floor(Math.random() * 256);
     const green = Math.floor(Math.random() * 256);
     const blue = Math.floor(Math.random() * 256);
     return "rgb(" + red + ", " + green + ", " + blue + ")";
 }
 
-const makeColours = (num) => {
+ makeColours = (num) => {
     const array = [];
     for(let i = 0; i < num; i++) {
         array.push(createRandomColour());
@@ -28,9 +42,10 @@ const makeColours = (num) => {
 
     return array;
 }
-const colours = makeColours(6);
 
-const selectedColourComputer = computerSelectsAColour();
+let colours = makeColours(6);
+
+let selectedColourComputer = computerSelectsAColour();
 colour.textContent = selectedColourComputer;
 
 
@@ -47,7 +62,8 @@ for(let i = 0; i < squares.length; i++) {
             console.log(selectedColourComputer);
             console.log(selectedColourPlayer);
             display.textContent = "Congrats! You won"
-            changeColoursOnWin(selectedColourPlayer);
+            changeColoursOnWin(selectedColourComputer);
+            h1.style.backgroundColor = selectedColourComputer;
 		} else {
             console.log(selectedColourComputer);
             console.log(selectedColourPlayer);
@@ -61,6 +77,10 @@ const changeColoursOnWin = (colour) => {
     for(let i = 0; squares.length; i++) {
         squares[i].style.backgroundColor = colour;
     }
+}
+
+const clickToMakeNewColours = () => {
+
 }
 
 
