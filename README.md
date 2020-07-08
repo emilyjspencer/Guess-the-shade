@@ -27,3 +27,6 @@ cd Guess-the-shade
 ![medium](medium.png)
 ![hard](hard.png)
 
+# Temporarily deployed with Surge at:
+profuse-swing.surge.sh
+
