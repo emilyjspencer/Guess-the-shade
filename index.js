@@ -20,6 +20,7 @@ for(let i = 0; i < squares.length; i++) {
             console.log(selectedColourComputer);
             console.log(selectedColourPlayer);
             display.textContent = "Congrats! You won"
+            changeColoursOnWin(selectedColourPlayer);
 		} else {
             console.log(selectedColourComputer);
             console.log(selectedColourPlayer);
@@ -29,3 +30,9 @@ for(let i = 0; i < squares.length; i++) {
     });
 }
 
+
+changeColoursOnWin = (colour) => {
+    for(let i = 0; squares.length; i++) {
+        squares[i].style.backgroundColor = colour;
+    }
+}
