@@ -9,8 +9,20 @@ colour.textContent = selectedColourComputer;
 for(let i = 0; i < squares.length; i++) {
     squares[i].style.backgroundColor = colours[i] 
     
-    squares[i].addEventListener("click", () => {
-        alert("Square clicked!")
+    squares[i].addEventListener("click", function(){
+        
+        console.log(this.style.backgroundColor);
+        let selectedColourPlayer = this.style.backgroundColor;
+		
+		if(selectedColourComputer === selectedColourPlayer) {
+            alert("You picked the right colour!");
+            console.log(selectedColourComputer);
+            console.log(selectedColourPlayer);
+		} else {
+            alert("your clicked the wrong colour!");
+            console.log(selectedColourComputer);
+            console.log(selectedColourPlayer);
+		}
     });
 }
 
